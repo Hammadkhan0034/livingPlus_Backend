@@ -87,7 +87,7 @@ const loginUser = asyncHandler(async (req, res) => {
     // Generate JWT token
     const token = jwt.sign(
       { userId: user._id },
-      process.env.JWT_SECRET,
+      process.env.ACCESS_TOKEN_SECERT,
       { expiresIn: "7d" }
     );
 
@@ -183,10 +183,5 @@ const updatePassword = asyncHandler(async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
-
-
-
-
-
 
 module.exports = { signUpUser, loginUser, editUserProfile, updatePassword };
