@@ -50,7 +50,7 @@ const signUpUser = asyncHandler(async (req, res) => {
     res.status(201).json({
       message: "User registered successfully",
       user: {
-        id: user.id,
+        id: user._id,
         fName: user.fName,
         lName: user.lName,
         email: user.email,
@@ -95,7 +95,7 @@ const loginUser = asyncHandler(async (req, res) => {
       message: "Login successful",
       token,
       user: {
-        id: user.id,
+        id: user._id,
         fName: user.fName,
         lName: user.lName,
         email: user.email,
